@@ -25,6 +25,7 @@ function SMSTemplatesPage(props) {
       type: TABLE_CELL_TYPES.TEXT,
     },
   };
+
   return (
     <PageGenerator
       data={smsTemplates}

@@ -1,0 +1,16 @@
+@import "src/styles/imports.scss";
+
+.meeting-type-popup {
+  .form {
+    padding-block: rem(20);
+    padding-inline: rem(30);
+  }
+}
+
+@media (min-width: em($desktop)) {
+  .meeting-type-popup {
+    .form {
+      padding-inline: rem(80);
+    }
+  }
+}

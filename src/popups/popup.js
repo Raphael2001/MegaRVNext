@@ -26,6 +26,7 @@ import { useAppSelector } from "utils/hooks/useRedux";
 import ProductPopup from "./components/ProductPopup/ProductPopup";
 import FilesPopup from "./components/FilesPopup/FilesPopup";
 import SMSTemplatePopup from "./components/SMSTemplatePopup/SMSTemplatePopup";
+import MeetingTypePopup from "./components/MeetingTypePopup/MeetingTypePopup";
 
 export default function Popups({ className = "" }) {
   const popupsArray = useAppSelector((store) => store.popupsArray);
@@ -88,6 +89,9 @@ export default function Popups({ className = "" }) {
       [POPUP_TYPES.FILES]: <FilesPopup key={key} payload={payload} />,
       [POPUP_TYPES.SMS_TEMPLATE]: (
         <SMSTemplatePopup key={key} payload={payload} />
+      ),
+      [POPUP_TYPES.MEETING_TYPE]: (
+        <MeetingTypePopup key={key} payload={payload} />
       ),
     };
 

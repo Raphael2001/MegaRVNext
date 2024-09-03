@@ -2,40 +2,37 @@
 
 import React, { useRef } from "react";
 
-import styles from "./IAMRolePopup.module.scss";
+import styles from "./MeetingTypePopup.module.scss";
 import { SlidePopupRef } from "utils/types/popup";
 import SlidePopup from "popups/Presets/SlidePopup/SlidePopup";
 import FormCreator from "components/FormCreator/FormCreator";
 import { FormDataType } from "utils/types/form";
 import FORM_INPUTS_TYPES from "constants/form-inputs-types";
-import { useAppSelector } from "utils/hooks/useRedux";
-import { IAMRoleType } from "utils/types/init";
+
 import Api from "api/requests";
+import { MeetingType } from "utils/types/meetingTypes";
 
 type Payload = {
-  dataItem?: IAMRoleType;
+  dataItem?: MeetingType;
 };
 
 type Props = {
   payload: Payload;
 };
 
-function IAMRolePopup(props: Props) {
+function MeetingTypePopup(props: Props) {
   const { payload = {} } = props;
   const { dataItem } = payload;
-
-  const modules = useAppSelector((store) => store.init.modules);
-  const filteredModules = modules.filter((item) => item.show !== false);
 
   const ref = useRef<SlidePopupRef>();
 
   function onSubmit(payload) {
     if (dataItem) {
       payload["id"] = dataItem["_id"];
-      return Api.updateRole({ payload, onSuccess });
+      return Api.updateMeetingType({ payload, onSuccess });
     }
 
-    Api.createRole({ payload, onSuccess });
+    Api.addMeetingType({ payload, onSuccess });
   }
 
   function onSuccess() {
@@ -45,26 +42,35 @@ function IAMRolePopup(props: Props) {
   const formData: FormDataType = {
     inputs: [
       {
-        name: "title",
-        label: "שם התפקיד",
+        name: "meetingTypeId",
+        label: "סוג פגישה",
         inputType: FORM_INPUTS_TYPES.INPUT,
         rules: ["not_empty"],
       },
       {
-        name: "permissionBitwise",
-        label: "הרשאות",
-        inputType: FORM_INPUTS_TYPES.BITWISE_CHECKBOX,
+        name: "insertText",
+        label: "טקסט יצירת רשומה חדשה",
+        inputType: FORM_INPUTS_TYPES.INPUT,
         rules: ["not_empty"],
-        options: filteredModules,
-        field: "title",
-        bitwiseField: "bitwise",
+      },
+      {
+        name: "updateText",
+        label: "טקסט עדכון רשימה קיימת",
+        inputType: FORM_INPUTS_TYPES.INPUT,
+        rules: ["not_empty"],
+      },
+      {
+        name: "reminderText",
+        label: "טקסט לתזכורת",
+        inputType: FORM_INPUTS_TYPES.INPUT,
+        rules: ["not_empty"],
       },
     ],
     initialData: dataItem,
   };
 
   return (
-    <SlidePopup className={styles["role-popup"]} ref={ref}>
+    <SlidePopup className={styles["meeting-type-popup"]} ref={ref}>
       <div className={styles["form"]}>
         <FormCreator
           formData={formData}
@@ -76,4 +82,4 @@ function IAMRolePopup(props: Props) {
   );
 }
 
-export default IAMRolePopup;
+export default MeetingTypePopup;

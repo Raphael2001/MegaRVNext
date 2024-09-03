@@ -10,6 +10,7 @@ import {
 import { MediaObjects } from "./media";
 import { UserType } from "./user";
 import { SMSTemplateType } from "./smsTemplate";
+import { MeetingType } from "./meetingTypes";
 
 export type init = {
   texts: Array<CmsText>;
@@ -27,6 +28,7 @@ export type init = {
   files: MediaObjects;
   users: Array<UserType>;
   smsTemplates: Array<SMSTemplateType>;
+  meetingTypes: Array<MeetingType>;
 };
 
 export type generalInfoValue =
@@ -95,4 +97,5 @@ export type ModuleType = {
   _id: string;
   title: string;
   route: string;
+  show?: boolean;
 };

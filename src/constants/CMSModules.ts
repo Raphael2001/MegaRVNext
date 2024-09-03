@@ -12,5 +12,6 @@ const CMS_MODULES = {
   ITEM_INGREDIENTS: "ItemIngredients",
   INGREDIENTS_MENU: "IngredientsMenu",
   SMS_TEMPLATES: "SMSTemplates",
+  MEETING_TYPE: "MeetingType",
 };
 export default CMS_MODULES;

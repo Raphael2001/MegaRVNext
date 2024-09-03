@@ -513,6 +513,43 @@ const Api = (function () {
     );
   }
 
+  async function addMeetingType(props: ApiProps = {}) {
+    function onSuccess(res: ApiResponse) {
+      Store.dispatch(addNewKey({ value: res.body, name: "meetingTypes" }));
+      typeof props.onSuccess === "function" && props.onSuccess(res.body);
+    }
+    props.headers = await accessTokenHeaders();
+    return ApiManager.addCall(
+      props,
+      API_METHODS.POST,
+      "meetingType",
+      onSuccess
+    );
+  }
+
+  async function updateMeetingType(props: ApiProps = {}) {
+    function onSuccess(res: ApiResponse) {
+      Store.dispatch(updateKey({ value: res.body, name: "meetingTypes" }));
+      typeof props.onSuccess === "function" && props.onSuccess(res.body);
+    }
+    props.headers = await accessTokenHeaders();
+    return ApiManager.addCall(props, API_METHODS.PUT, "meetingType", onSuccess);
+  }
+
+  async function deleteMeetingType(props: ApiProps = {}) {
+    function onSuccess(res: ApiResponse) {
+      Store.dispatch(deleteKeyById({ value: res.body, name: "meetingTypes" }));
+      typeof props.onSuccess === "function" && props.onSuccess(res.body);
+    }
+    props.headers = await accessTokenHeaders();
+    return ApiManager.addCall(
+      props,
+      API_METHODS.DELETE,
+      "meetingType",
+      onSuccess
+    );
+  }
+
   return {
     initCms,
     upsertText,
@@ -556,6 +593,9 @@ const Api = (function () {
     addSMSTemplate,
     updateSMSTemplate,
     deleteSMSTemplate,
+    addMeetingType,
+    updateMeetingType,
+    deleteMeetingType,
   };
 })();
 
