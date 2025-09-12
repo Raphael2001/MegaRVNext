@@ -1,0 +1,103 @@
+@use "styles/functions";
+@use "styles/settings";
+@use "styles/mixins";
+.api-error-popup {
+  .api-error-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .error-animation-wrapper {
+      margin-top: functions.rem(70);
+      width: functions.rem(100);
+    }
+    .texts-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-top: functions.rem(20);
+      align-items: center;
+      .title {
+        margin: 0;
+        font-size: functions.rem(20);
+        line-height: functions.rem(24);
+        font-family: settings.$font-semibold;
+      }
+      .text {
+        margin-top: functions.rem(7);
+        font-size: functions.rem(16);
+        line-height: functions.rem(18);
+        font-family: settings.$font-light;
+      }
+    }
+  }
+}
+
+@media (min-width: functions.em(settings.$tablet)) {
+  .api-error-popup {
+    .api-error-wrapper {
+      .error-animation-wrapper {
+        margin-top: functions.rem(90);
+        width: functions.rem(170);
+      }
+      .texts-wrapper {
+        margin-top: functions.rem(50);
+        .title {
+          font-size: functions.rem(24);
+          line-height: functions.rem(30);
+        }
+        .text {
+          margin-top: functions.rem(7);
+          font-size: functions.rem(20);
+          line-height: functions.rem(22);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: functions.em(settings.$desktop)) {
+  .api-error-popup {
+    .api-error-wrapper {
+      .error-animation-wrapper {
+        margin-top: functions.rem(90);
+        width: functions.rem(170);
+      }
+      .texts-wrapper {
+        margin-top: functions.rem(50);
+        .title {
+          font-size: functions.rem(24);
+          line-height: functions.rem(30);
+        }
+        .text {
+          margin-top: functions.rem(7);
+          font-size: functions.rem(20);
+          line-height: functions.rem(22);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: functions.em(settings.$desktop_large)) {
+  .api-error-popup {
+    .api-error-wrapper {
+      .error-animation-wrapper {
+        margin-top: functions.rem(90);
+        width: functions.rem(170);
+      }
+      .texts-wrapper {
+        margin-top: functions.rem(50);
+        .title {
+          font-size: functions.rem(24);
+          line-height: functions.rem(30);
+        }
+        .text {
+          margin-top: functions.rem(7);
+          font-size: functions.rem(20);
+          line-height: functions.rem(22);
+        }
+      }
+    }
+  }
+}

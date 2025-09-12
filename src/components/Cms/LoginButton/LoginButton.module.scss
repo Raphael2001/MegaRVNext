@@ -1,0 +1,11 @@
+@use "styles/functions";
+@use "styles/settings";
+@use "styles/mixins";
+.login-btn {
+  width: 100%;
+  height: functions.rem(40);
+  border-radius: functions.rem(8);
+  background-color: #28292a;
+  color: settings.$white;
+  font-family: settings.$font-light;
+}

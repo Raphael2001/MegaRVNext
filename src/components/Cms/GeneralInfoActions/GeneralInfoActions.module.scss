@@ -1,0 +1,8 @@
+@use "styles/functions";
+@use "styles/settings";
+@use "styles/mixins";
+
+.actions {
+  display: flex;
+  gap: functions.rem(10);
+}

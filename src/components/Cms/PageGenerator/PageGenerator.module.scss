@@ -1,0 +1,17 @@
+@use "styles/functions";
+.page-wrapper {
+	display: flex;
+	flex-direction: column;
+
+	.add-button-wrapper {
+		margin-inline-start: auto;
+		margin-block: functions.rem(20);
+	}
+	.filter-section {
+		margin-inline: auto;
+		margin-bottom: functions.rem(20);
+	}
+	.pagination {
+		margin-top: functions.rem(20);
+	}
+}

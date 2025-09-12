@@ -1,0 +1,31 @@
+@use "mixins.scss";
+
+// Define the base path for the font files
+$font-base-path: "/assets/fonts";
+
+// Define a map for fonts and their variations
+$fonts: (
+  "Heebo": (
+    "Regular",
+    "Medium",
+    "SemiBold",
+    "Bold",
+    "Light",
+  ),
+);
+
+// Function to generate the full path for a font
+@function font-path($font-name, $weight) {
+  @return "#{$font-base-path}/#{$font-name}-#{$weight}";
+}
+
+// Loop through each font and its variations to generate @font-face rules
+@each $font-name, $variations in $fonts {
+  @each $weight in $variations {
+    @include mixins.font-face(
+      "#{$font-name}-#{$weight}",
+      normal,
+      font-path($font-name, $weight)
+    );
+  }
+}

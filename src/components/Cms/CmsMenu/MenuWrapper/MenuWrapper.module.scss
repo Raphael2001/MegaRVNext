@@ -1,0 +1,46 @@
+@use "styles/functions";
+@use "styles/settings";
+@use "styles/mixins";
+
+.menu-wrapper {
+	height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	transition: all 300ms ease-out;
+
+	&.burger-open {
+		transform: translateX(functions.rem(-260));
+	}
+}
+.sidebar-cms {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	.cms {
+		width: 100%;
+		height: 100%;
+		.content {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+@media (min-width: functions.em(settings.$tablet)) {
+	.menu-wrapper {
+		&.burger-open {
+			transform: translateX(functions.rem(-350));
+		}
+	}
+}
+
+@media (min-width: functions.em(settings.$desktop)) {
+	.cms {
+		overflow: hidden;
+		.content {
+			overflow: scroll;
+			padding-inline: functions.rem(15);
+			@include mixins.hideScrollbar();
+		}
+	}
+}

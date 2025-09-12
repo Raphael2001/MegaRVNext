@@ -1,0 +1,39 @@
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { Popup } from "utils/types/popup";
+
+type PopupPayload = {
+  type: string;
+  payload?: any;
+  priority?: number;
+};
+
+const initialState: Popup[] = [];
+
+export const popupsSlice = createSlice({
+  name: "popupsArray",
+  initialState: initialState,
+  reducers: {
+    addPopup: (state: Popup[], action: PayloadAction<PopupPayload>) => {
+      const key = crypto.randomUUID();
+
+      const { payload = {}, type, priority = 1 } = action.payload;
+
+      const popup = {
+        payload,
+        type,
+        priority,
+        key,
+      };
+      state.push(popup);
+      state.sort((a, b) => a.priority - b.priority);
+    },
+    removePopup: (state) => {
+      state.pop();
+    },
+  },
+});
+
+// Action creators are generated for each case reducer function
+export const { addPopup, removePopup } = popupsSlice.actions;
+
+export default popupsSlice.reducer;

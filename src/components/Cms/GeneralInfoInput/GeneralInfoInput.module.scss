@@ -1,0 +1,11 @@
+@use "styles/functions";
+@use "styles/settings";
+@use "styles/mixins";
+
+.field {
+}
+
+.row {
+  display: flex;
+  gap: functions.rem(20);
+}

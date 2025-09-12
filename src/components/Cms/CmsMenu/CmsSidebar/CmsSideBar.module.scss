@@ -1,0 +1,19 @@
+@use "styles/functions";
+@use "styles/settings";
+@use "styles/mixins";
+.sidebar-menu-list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding-top: functions.rem(30);
+  height: 75vh;
+  overflow: scroll;
+  @include mixins.hideScrollbar();
+  padding-bottom: functions.rem(30);
+  gap: functions.rem(3);
+}
+@media (min-width: functions.em(settings.$tablet)) {
+  .sidebar-menu-list {
+    padding-top: functions.rem(15);
+  }
+}

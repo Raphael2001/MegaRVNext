@@ -1,0 +1,99 @@
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+
+@use "settings.scss";
+@use "functions.scss";
+
+@mixin hideScrollbar() {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+@mixin recolor($color-name, $opacity: 1) {
+  $filter: map.get(settings.$color-filters, $color-name);
+
+  @if $filter {
+    filter: #{$filter};
+    opacity: $opacity;
+  } @else {
+    @warn "No filter found for '#{$color-name}'. Please add it to the \$color-filters map.";
+  }
+}
+
+@mixin placeholder() {
+  color: settings.$grey;
+  font-family: settings.$font;
+  font-size: functions.rem(16);
+
+  @media (min-width: functions.em(settings.$desktop)) {
+    font-size: functions.rem(20);
+  }
+}
+
+@mixin placeholder-focus() {
+  font-size: functions.rem(14);
+
+  @media (min-width: functions.em(settings.$desktop)) {
+    font-size: functions.rem(18);
+  }
+}
+
+@mixin input() {
+  color: black;
+  font-family: settings.$font;
+  font-size: functions.rem(16);
+  background-color: transparent;
+
+  @media (min-width: functions.em(settings.$desktop)) {
+    font-size: functions.rem(20);
+  }
+}
+
+@mixin focus-border() {
+  &:focus,
+  &:focus-visible {
+    border-color: settings.$input-focus-color;
+  }
+}
+@mixin input-disabled() {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@mixin font-face($font-family, $font-style, $font-path) {
+  @font-face {
+    font-family: $font-family;
+    src: url("#{$font-path}.ttf") format("truetype");
+    font-style: $font-style;
+    font-display: swap;
+  }
+}
+
+@mixin text-shadow() {
+  text-shadow:
+    2px 7px 5px rgba(0, 0, 0, 0.3),
+    0px -4px 10px rgba(255, 255, 255, 0.3);
+}
+
+@mixin multi-inputs-placeholder() {
+  font-size: functions.rem(18);
+  font-family: settings.$font;
+}
+
+@mixin input-text() {
+  font-size: functions.rem(14);
+
+  font-family: settings.$font-light;
+}
+
+@mixin glass-effect($color, $opacity: 0.57) {
+  background-color: rgba($color, $opacity);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba($color, $opacity);
+}

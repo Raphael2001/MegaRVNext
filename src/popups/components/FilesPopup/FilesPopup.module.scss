@@ -1,0 +1,23 @@
+@use "styles/functions";
+@use "styles/settings";
+@use "styles/mixins";
+.media-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: functions.rem(20);
+
+  .input-wrapper {
+    margin-top: functions.rem(30);
+    width: functions.rem(230);
+  }
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: functions.rem(15);
+    margin-top: functions.rem(25);
+  }
+  .button {
+    width: functions.rem(180);
+  }
+}
