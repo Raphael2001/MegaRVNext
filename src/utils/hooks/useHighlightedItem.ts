@@ -15,8 +15,7 @@ function useHighlightedItem(props: Props) {
 	const { options, field = "text", query = "", onOptionClick, isOpen, setIsOpen, name } = props;
 	const [highlightedItem, setHighlightedItem] = useState(-1);
 
-	const filteredOptions = useMemo(() => options.filter((o) => o[field].includes(query)), [options, query, field]);
-
+	const filteredOptions = useMemo(() => options.filter((o) => o[field].toLowerCase().includes(query.toLocaleLowerCase())), [options, query, field]);
 	const getHighlightedElement = (elIndex: number) => {
 		const element = document.querySelector(`li[data-index="${name}_${elIndex}"]`);
 		if (element) {
