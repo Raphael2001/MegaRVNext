@@ -25,6 +25,7 @@ import { lock, clearBodyLocks } from "tua-body-scroll-lock";
 import DynamicPagePopup from "./components/DynamicPagePopup/DynamicPagePopup";
 import SMSTemplatePopup from "./components/SMSTemplatePopup/SMSTemplatePopup";
 import MeetingTypePopup from "./components/MeetingTypePopup/MeetingTypePopup";
+import HomeotProductPopup from "./components/HomeotProductPopup/HomeotProductPopup";
 
 const popupComponentsMap = {
 	[POPUP_TYPES.API_ERROR]: ApiErrorPopup,
@@ -43,6 +44,7 @@ const popupComponentsMap = {
 	[POPUP_TYPES.DYNAMIC_PAGES]: DynamicPagePopup,
 	[POPUP_TYPES.SMS_TEMPLATE]: SMSTemplatePopup,
 	[POPUP_TYPES.MEETING_TYPE]: MeetingTypePopup,
+	[POPUP_TYPES.HOMEOT_PRODUCT]: HomeotProductPopup,
 };
 
 export default function Popups({ className = "" }) {

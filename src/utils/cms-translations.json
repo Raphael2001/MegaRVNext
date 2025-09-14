@@ -113,5 +113,8 @@
 	"meeting_type": "סוג פגישה",
 	"meeting_insert_text": "טקסט יצירת רשומה חדשה",
 	"meeting_update_text": "טקסט עדכון רשימה קיימת",
-	"meeting_reminder_text": "טקסט לתזכורת"
+	"meeting_reminder_text": "טקסט לתזכורת",
+	"quantity": "כמות",
+	"powerlink_products": "מוצרי פווארלינק",
+	"product_name": "שם מוצר"
 }

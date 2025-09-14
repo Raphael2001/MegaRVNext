@@ -6,6 +6,7 @@ import { Media } from "./media";
 import { UserType } from "./user";
 import { MetaTags } from "./metaTags";
 import { DynamicPage, DynamicPageComponentTypes } from "./dynamicPages";
+import { PowerLinkProduct, WooProduct } from "./products";
 
 export type Init = {
 	texts: Array<CmsText>;
@@ -23,6 +24,8 @@ export type Init = {
 	dynamicPagesComponentsTypes: DynamicPageComponentTypes;
 	smsTemplates: Array<SMSTemplate>;
 	meetingTypes: Array<MeetingType>;
+	powerLinkProducts: Array<PowerLinkProduct>;
+	homeotProducts: Array<WooProduct>;
 };
 
 export type GeneralInfoValue = Array<GeneralInfoItem> | RotatingTextItem | GeneralInfoItem;

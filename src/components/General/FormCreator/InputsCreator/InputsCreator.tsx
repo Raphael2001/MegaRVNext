@@ -73,6 +73,7 @@ function InputsCreator(props: Props) {
 		language,
 		showDeleteInputButton = false,
 		max,
+		idField = "_id",
 	} = input;
 
 	const [tableHeader, setTableHeader] = useState({});
@@ -305,6 +306,7 @@ function InputsCreator(props: Props) {
 					options={options}
 					field={field}
 					ref={ref as ButtonRef}
+					idField={idField}
 				/>
 			);
 			break;

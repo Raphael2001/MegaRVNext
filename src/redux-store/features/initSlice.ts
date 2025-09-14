@@ -18,6 +18,8 @@ const initialState: Init = {
 	dynamicPagesComponentsTypes: {},
 	smsTemplates: [],
 	meetingTypes: [],
+	powerLinkProducts: [],
+	homeotProducts: [],
 };
 
 export const initSlice = createSlice({
@@ -62,9 +64,22 @@ export const initSlice = createSlice({
 
 			state[name] = field;
 		},
+		updateKeyById: (state: Init, action) => {
+			const { name, value } = action.payload;
+			const { _id } = value;
+			const field = copy(state[name]);
+
+			const index = field.findIndex((l) => l._id === _id);
+
+			if (index !== -1) {
+				field[index] = value;
+			}
+
+			state[name] = field;
+		},
 	},
 });
 
-export const { setInit, updateInit, addNewKey, updateKey, deleteKeyById } = initSlice.actions;
+export const { setInit, updateInit, addNewKey, updateKey, deleteKeyById, updateKeyById } = initSlice.actions;
 
 export default initSlice.reducer;

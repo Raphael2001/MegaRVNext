@@ -2,9 +2,10 @@ import API_METHODS from "constants/ApiMethods";
 import { createCMSApiMethods } from "./base";
 
 import Store from "redux-store";
-import { setInit } from "redux-store/features/initSlice";
+import { setInit, updateKey, updateKeyById } from "redux-store/features/initSlice";
 import { ApiResponse } from "utils/types/api";
 import { addSectionPageData, deleteSectionPageData, setPageData, setSectionPageData } from "redux-store/features/dynamicPage";
+import WOO_SOURCES from "constants/WooSource";
 const cms = {
 	links: createCMSApiMethods("links", [{ method: API_METHODS.POST }, { method: API_METHODS.PUT }, { method: API_METHODS.DELETE }], "links"),
 	metaTags: createCMSApiMethods(
@@ -94,6 +95,21 @@ const cms = {
 		[{ method: API_METHODS.POST }, { method: API_METHODS.PUT }, { method: API_METHODS.DELETE }],
 		"meetingTypes",
 	),
+	wooProducts: createCMSApiMethods("wooProducts", [
+		{
+			method: API_METHODS.PUT,
+			useBasicCMSOnSuccess: false,
+			onSuccess: (res: ApiResponse) => {
+				const source = res.body.source;
+
+				switch (source) {
+					case WOO_SOURCES.HOMEOT:
+						Store.dispatch(updateKeyById({ value: res.body.product, name: "homeotProducts" }));
+						break;
+				}
+			},
+		},
+	]),
 };
 
 export default cms;

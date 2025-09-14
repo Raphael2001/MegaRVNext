@@ -9,5 +9,6 @@ const CMS_MODULES = {
 	DYNAMIC_PAGES: "DynamicPages",
 	SMS_TEMPLATES: "SMSTemplates",
 	MEETING_TYPE: "MeetingType",
+	PRODUCT: "Product",
 };
 export default CMS_MODULES;

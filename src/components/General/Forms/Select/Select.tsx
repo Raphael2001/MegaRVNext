@@ -25,11 +25,12 @@ function Select(props: SelectProps) {
 		className,
 		disabled = false,
 		ref,
+		idField = "_id",
 	} = props;
 
 	const [isOpen, setIsOpen] = useState(false);
 
-	const foundItem = options.find((item) => item._id === value);
+	const foundItem = options.find((item) => item[idField] === value);
 
 	const { highlightedItem, handleKeyDown } = useHighlightedItem({
 		options,

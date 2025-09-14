@@ -71,7 +71,7 @@ function PageGenerator(props: Props) {
 	const openPopup = usePopup();
 	const dataArray: any[] = Array.isArray(data) ? data : [];
 
-	const numberOfPages = numberOfResults ? Math.ceil(dataArray.length / numberOfResults) : 1;
+	const numberOfPages = numberOfResults ? Math.ceil(filteredData.length / numberOfResults) : 1;
 
 	useEffect(() => {
 		if (dataArray && dataArray.length > 0) {
