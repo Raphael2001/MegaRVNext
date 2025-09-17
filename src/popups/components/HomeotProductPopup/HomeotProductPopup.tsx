@@ -53,11 +53,12 @@ export default function HomeotProductPopup(props: Props) {
 				initialValue: dataItem?.plProducts,
 			},
 			{
+				type: "number",
 				name: "quantity",
 				label: translate("quantity"),
 				inputType: FORM_INPUTS_TYPES.INPUT,
 				schema: VALIDATION_SCHEMES.RequiredNumber,
-				initialValue: dataItem?.plQuantity ?? 1,
+				initialValue: dataItem?.plQuantity ?? "1",
 			},
 		],
 		initialData: dataItem,
