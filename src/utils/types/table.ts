@@ -39,7 +39,7 @@ export interface TableHeaderItem {
 	searchField?: string;
 }
 
-type DatasetItem = {
+export type DatasetItem = {
 	_id: string;
 };
 

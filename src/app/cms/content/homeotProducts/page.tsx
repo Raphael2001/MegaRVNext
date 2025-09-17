@@ -12,6 +12,7 @@ import { TableHeader } from "utils/types/table";
 export default function HomeotProductsPage() {
 	usePermission(CMS_MODULES.PRODUCT);
 	const wooProducts = useAppSelector((store) => store.init.homeotProducts);
+	const powerLinkProducts = useAppSelector((store) => store.init.powerLinkProducts);
 
 	const translate = useCMSTranslate();
 
@@ -23,6 +24,12 @@ export default function HomeotProductsPage() {
 		plQuantity: {
 			title: translate("quantity"),
 			type: TABLE_CELL_TYPES.TEXT,
+		},
+		plProducts: {
+			title: translate("powerlink_products"),
+			type: TABLE_CELL_TYPES.TEXT_FROM_DATASET,
+			dataset: powerLinkProducts,
+			displayField: "name",
 		},
 	};
 

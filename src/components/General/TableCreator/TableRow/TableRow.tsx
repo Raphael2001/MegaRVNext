@@ -8,7 +8,7 @@ import ActionsCell from "components/General/TableCreator/Actions/ActionsCell/Act
 import InputCell from "components/General/TableCreator/InputCell/InputCell";
 import CheckBoxCell from "components/General/TableCreator/CheckBoxCell/CheckBoxCell";
 import { InputEvent } from "utils/types/inputs";
-import { TableHeaderItem } from "utils/types/table";
+import { DatasetItem, TableHeaderItem } from "utils/types/table";
 import { DragHandle } from "components/General/DnD/Drag/Drag";
 import { GeneralServerItem } from "utils/types/general";
 import TextCell from "components/General/TableCreator/TextCell/TextCell";
@@ -66,6 +66,60 @@ function getValue(key: string, dataItem: GeneralServerItem): string {
 	}
 
 	return "";
+}
+
+function getDisplayValue(
+	dataset: Array<DatasetItem>,
+	searchField: string,
+	displayField: string,
+	value: string | string[],
+	opts: { joinWith?: string; unique?: boolean } = {},
+): string | undefined {
+	const { joinWith = ", ", unique = true } = opts;
+
+	// Build an index for O(1) lookups when value is an array
+	const index = new Map<string, unknown>();
+	for (const item of dataset) {
+		const key = item[searchField];
+		if (typeof key === "string") index.set(key, item[displayField]);
+	}
+
+	// Helper: normalize the display value to a string
+	const toStringValue = (v: unknown): string => {
+		if (Array.isArray(v)) {
+			// If displayField itself is an array of strings, join it
+			return v.join(joinWith);
+		}
+		return v == null ? "" : String(v);
+	};
+
+	if (Array.isArray(value)) {
+		if (value.length === 0) return "";
+
+		const seen = new Set<string>();
+		const parts: string[] = [];
+
+		for (const key of value) {
+			if (typeof key !== "string") continue;
+			if (unique && seen.has(key)) continue;
+			seen.add(key);
+
+			const display = index.get(key);
+			if (display !== undefined) {
+				const str = toStringValue(display);
+				if (str) parts.push(str);
+			}
+		}
+
+		return parts.join(joinWith);
+	}
+
+	// Single string
+	const display = index.get(value);
+	if (display === undefined) return undefined;
+
+	const str = toStringValue(display);
+	return str || undefined;
 }
 
 type CellProps = {
@@ -140,10 +194,11 @@ function RenderCell({ item, value, name, data, onChangeCheckBox, selectedCheckbo
 
 			case TABLE_CELL_TYPES.TEXT_FROM_DATASET:
 				if (Array.isArray(dataset)) {
-					const foundItem = dataset.find((item) => item[searchField] === value);
-					if (foundItem && Object.hasOwn(foundItem, displayField)) {
-						return foundItem[displayField];
+					const displayValue = getDisplayValue(dataset, searchField, displayField, value);
+					if (displayValue) {
+						return displayValue;
 					}
+
 					return (
 						<TextCell
 							value={value}
