@@ -41,7 +41,7 @@ export default function HomeotProductsPage() {
 			module={CMS_MODULES.PRODUCT}
 			popup={POPUP_TYPES.HOMEOT_PRODUCT}
 			searchFields={["name"]}
-			numberOfResults={5}
+			numberOfResults={10}
 		/>
 	);
 }
