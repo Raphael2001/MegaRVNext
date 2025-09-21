@@ -23,7 +23,7 @@ export default async function DynamicPage(props: Props) {
 
 	setRequestLocale(locale);
 
-	const fullRoute = route.join("/");
+	const fullRoute = "/" + route.join("/");
 
 	const payload = {
 		route: fullRoute,
