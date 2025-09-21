@@ -26,6 +26,7 @@ import DynamicPagePopup from "./components/DynamicPagePopup/DynamicPagePopup";
 import SMSTemplatePopup from "./components/SMSTemplatePopup/SMSTemplatePopup";
 import MeetingTypePopup from "./components/MeetingTypePopup/MeetingTypePopup";
 import HomeotProductPopup from "./components/HomeotProductPopup/HomeotProductPopup";
+import RefuaVeTevaProductPopup from "./components/RefuaVeTevaProductPopup/RefuaVeTevaProductPopup";
 
 const popupComponentsMap = {
 	[POPUP_TYPES.API_ERROR]: ApiErrorPopup,
@@ -45,6 +46,7 @@ const popupComponentsMap = {
 	[POPUP_TYPES.SMS_TEMPLATE]: SMSTemplatePopup,
 	[POPUP_TYPES.MEETING_TYPE]: MeetingTypePopup,
 	[POPUP_TYPES.HOMEOT_PRODUCT]: HomeotProductPopup,
+	[POPUP_TYPES.REFUA_VE_TEVA_PRODUCT]: RefuaVeTevaProductPopup,
 };
 
 export default function Popups({ className = "" }) {

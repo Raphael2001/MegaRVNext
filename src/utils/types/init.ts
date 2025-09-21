@@ -26,6 +26,7 @@ export type Init = {
 	meetingTypes: Array<MeetingType>;
 	powerLinkProducts: Array<PowerLinkProduct>;
 	homeotProducts: Array<WooProduct>;
+	refuaVeTevaProducts: Array<WooProduct>;
 };
 
 export type GeneralInfoValue = Array<GeneralInfoItem> | RotatingTextItem | GeneralInfoItem;

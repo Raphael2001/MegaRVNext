@@ -106,6 +106,9 @@ const cms = {
 					case WOO_SOURCES.HOMEOT:
 						Store.dispatch(updateKeyById({ value: res.body.product, name: "homeotProducts" }));
 						break;
+					case WOO_SOURCES.REFUA_VE_TEVA:
+						Store.dispatch(updateKeyById({ value: res.body.product, name: "refuaVeTevaProducts" }));
+						break;
 				}
 			},
 		},

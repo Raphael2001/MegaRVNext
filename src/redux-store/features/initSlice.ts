@@ -20,6 +20,7 @@ const initialState: Init = {
 	meetingTypes: [],
 	powerLinkProducts: [],
 	homeotProducts: [],
+	refuaVeTevaProducts: [],
 };
 
 export const initSlice = createSlice({
