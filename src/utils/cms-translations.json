@@ -116,5 +116,8 @@
 	"meeting_reminder_text": "טקסט לתזכורת",
 	"quantity": "כמות",
 	"powerlink_products": "מוצרי פווארלינק",
-	"product_name": "שם מוצר"
+	"product_name": "שם מוצר",
+	"fetch_refuaVeTevaProducts": "משיכת מוצרי רפואה וטבע",
+	"fetch_homeotProducts": "משיכת מוצרי הומאוטריט",
+	"fetch_plProducts": "משיכת מוצרי פווארלינק"
 }

@@ -2,8 +2,13 @@
 @use "styles/settings";
 @use "styles/mixins";
 .general-info-wrapper {
-  padding-block: functions.rem(30);
-  .sync-db-btn {
-    margin-top: functions.rem(15);
-  }
+	padding-block: functions.rem(30);
+	.sync-db-btn {
+		margin-top: functions.rem(15);
+	}
+	.fetch-products {
+		margin-top: functions.rem(25);
+		display: flex;
+		gap: functions.rem(15);
+	}
 }

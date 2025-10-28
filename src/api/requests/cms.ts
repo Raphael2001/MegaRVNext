@@ -2,7 +2,7 @@ import API_METHODS from "constants/ApiMethods";
 import { createCMSApiMethods } from "./base";
 
 import Store from "redux-store";
-import { setInit, updateKey, updateKeyById } from "redux-store/features/initSlice";
+import { setInit, updateInit, updateKey, updateKeyById } from "redux-store/features/initSlice";
 import { ApiResponse } from "utils/types/api";
 import { addSectionPageData, deleteSectionPageData, setPageData, setSectionPageData } from "redux-store/features/dynamicPage";
 import WOO_SOURCES from "constants/WooSource";
@@ -110,6 +110,35 @@ const cms = {
 						Store.dispatch(updateKeyById({ value: res.body.product, name: "refuaVeTevaProducts" }));
 						break;
 				}
+			},
+		},
+	]),
+
+	refuaVeTevaProducts: createCMSApiMethods("refuaVeTevaProducts", [
+		{
+			method: API_METHODS.PUT,
+			useBasicCMSOnSuccess: false,
+			onSuccess: (res: ApiResponse) => {
+				Store.dispatch(updateInit({ refuaVeTevaProducts: res.body.products }));
+			},
+		},
+	]),
+
+	homeotProducts: createCMSApiMethods("homeotProducts", [
+		{
+			method: API_METHODS.PUT,
+			useBasicCMSOnSuccess: false,
+			onSuccess: (res: ApiResponse) => {
+				Store.dispatch(updateInit({ homeotProducts: res.body.products }));
+			},
+		},
+	]),
+	powerLinkProducts: createCMSApiMethods("powerLinkProducts", [
+		{
+			method: API_METHODS.PUT,
+			useBasicCMSOnSuccess: false,
+			onSuccess: (res: ApiResponse) => {
+				Store.dispatch(updateInit({ powerLinkProducts: res.body.products }));
 			},
 		},
 	]),
