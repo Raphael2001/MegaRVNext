@@ -160,6 +160,7 @@ function PageGenerator(props: Props) {
 		const { value } = e.target;
 		setFilterText(value);
 		filterData(value);
+		setPage(1);
 	}
 
 	function filterData(text: string) {
