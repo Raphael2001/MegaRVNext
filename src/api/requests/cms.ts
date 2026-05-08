@@ -142,6 +142,20 @@ const cms = {
 			},
 		},
 	]),
+	couponSalesAgents: createCMSApiMethods(
+		"couponSalesAgent",
+		[{ method: API_METHODS.POST }, { method: API_METHODS.PUT }, { method: API_METHODS.DELETE }],
+		"couponSalesAgents",
+	),
+	salesAgents: createCMSApiMethods("salesAgents", [
+		{
+			method: API_METHODS.PUT,
+			useBasicCMSOnSuccess: false,
+			onSuccess: (res: ApiResponse) => {
+				Store.dispatch(updateInit({ salesAgents: res.body }));
+			},
+		},
+	]),
 };
 
 export default cms;

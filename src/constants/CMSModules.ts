@@ -10,5 +10,6 @@ const CMS_MODULES = {
 	SMS_TEMPLATES: "SMSTemplates",
 	MEETING_TYPE: "MeetingType",
 	PRODUCT: "Product",
+	COUPON_SALES_AGENT: "CouponSalesAgent",
 };
 export default CMS_MODULES;

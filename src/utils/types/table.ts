@@ -40,7 +40,8 @@ export interface TableHeaderItem {
 }
 
 export type DatasetItem = {
-	_id: string;
+	_id?: string;
+	[key: string]: unknown;
 };
 
 export interface TableHeader {

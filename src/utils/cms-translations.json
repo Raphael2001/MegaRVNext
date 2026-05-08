@@ -119,5 +119,9 @@
 	"product_name": "שם מוצר",
 	"fetch_refuaVeTevaProducts": "משיכת מוצרי רפואה וטבע",
 	"fetch_homeotProducts": "משיכת מוצרי הומאוטריט",
-	"fetch_plProducts": "משיכת מוצרי פווארלינק"
+	"fetch_plProducts": "משיכת מוצרי פווארלינק",
+	"coupon_code": "קוד קופון",
+	"sales_agent": "סוכן מכירות",
+	"delete_coupon_sales_agent": "למחוק את שיוך הקופון לסוכן?",
+	"fetch_sales_agents": "משיכת סוכני מכירות"
 }

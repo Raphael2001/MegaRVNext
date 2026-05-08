@@ -21,6 +21,8 @@ const initialState: Init = {
 	powerLinkProducts: [],
 	homeotProducts: [],
 	refuaVeTevaProducts: [],
+	salesAgents: [],
+	couponSalesAgents: [],
 };
 
 export const initSlice = createSlice({

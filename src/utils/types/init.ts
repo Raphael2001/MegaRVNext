@@ -27,6 +27,8 @@ export type Init = {
 	powerLinkProducts: Array<PowerLinkProduct>;
 	homeotProducts: Array<WooProduct>;
 	refuaVeTevaProducts: Array<WooProduct>;
+	salesAgents: Array<SalesAgent>;
+	couponSalesAgents: Array<CouponSalesAgent>;
 };
 
 export type GeneralInfoValue = Array<GeneralInfoItem> | RotatingTextItem | GeneralInfoItem;
@@ -98,4 +100,15 @@ export type MeetingType = {
 	updateText: string;
 	reminderText: string;
 	meetingTypeId: string;
+};
+
+export type SalesAgent = {
+	ownerid: string;
+	name: string;
+};
+
+export type CouponSalesAgent = {
+	_id: string;
+	couponCode: string;
+	salesAgentId: string;
 };
