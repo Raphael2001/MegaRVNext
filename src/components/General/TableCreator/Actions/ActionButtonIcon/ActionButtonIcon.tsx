@@ -1,5 +1,3 @@
-import React from "react";
-
 import styles from "./ActionButtonIcon.module.scss";
 import { IconType } from "utils/types/svg";
 import Icon from "components/General/Icon/Icon";

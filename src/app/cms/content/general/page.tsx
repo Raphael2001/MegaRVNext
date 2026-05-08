@@ -81,6 +81,16 @@ export default function GeneralPage() {
 						})
 					}
 				/>
+				<CmsButton
+					text={translate("fetch_sales_agents")}
+					className="create"
+					color="blue"
+					onClick={() =>
+						Api.cms.salesAgents.PUT({
+							config: { onSuccess: onSuccessNotification },
+						})
+					}
+				/>
 			</div>
 		</div>
 	);
