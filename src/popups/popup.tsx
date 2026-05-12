@@ -28,6 +28,8 @@ import MeetingTypePopup from "./components/MeetingTypePopup/MeetingTypePopup";
 import HomeotProductPopup from "./components/HomeotProductPopup/HomeotProductPopup";
 import RefuaVeTevaProductPopup from "./components/RefuaVeTevaProductPopup/RefuaVeTevaProductPopup";
 import CouponSalesAgentPopup from "./components/CouponSalesAgentPopup/CouponSalesAgentPopup";
+import LeadSourcePopup from "./components/LeadSourcePopup/LeadSourcePopup";
+import PhoneLeadSourcePopup from "./components/PhoneLeadSourcePopup/PhoneLeadSourcePopup";
 
 const popupComponentsMap = {
 	[POPUP_TYPES.API_ERROR]: ApiErrorPopup,
@@ -49,6 +51,8 @@ const popupComponentsMap = {
 	[POPUP_TYPES.HOMEOT_PRODUCT]: HomeotProductPopup,
 	[POPUP_TYPES.REFUA_VE_TEVA_PRODUCT]: RefuaVeTevaProductPopup,
 	[POPUP_TYPES.COUPON_SALES_AGENT]: CouponSalesAgentPopup,
+	[POPUP_TYPES.LEAD_SOURCE]: LeadSourcePopup,
+	[POPUP_TYPES.PHONE_LEAD_SOURCE]: PhoneLeadSourcePopup,
 };
 
 export default function Popups({ className = "" }) {

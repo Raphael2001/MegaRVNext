@@ -123,5 +123,10 @@
 	"coupon_code": "קוד קופון",
 	"sales_agent": "סוכן מכירות",
 	"delete_coupon_sales_agent": "למחוק את שיוך הקופון לסוכן?",
-	"fetch_sales_agents": "משיכת סוכני מכירות"
+	"fetch_sales_agents": "משיכת סוכני מכירות",
+	"lead_source_title": "תווית",
+	"lead_source_value": "מזהה פווארלינק",
+	"delete_lead_source": "למחוק את מקור ההגעה הזה?",
+	"phone": "טלפון",
+	"delete_phone_lead_source": "למחוק את שיוך הטלפון הזה?"
 }

@@ -23,6 +23,8 @@ const initialState: Init = {
 	refuaVeTevaProducts: [],
 	salesAgents: [],
 	couponSalesAgents: [],
+	leadSources: [],
+	phoneLeadSources: [],
 };
 
 export const initSlice = createSlice({

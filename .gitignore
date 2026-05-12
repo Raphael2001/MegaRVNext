@@ -2,6 +2,7 @@
 
 # Claude Code
 .claude/
+.playwright-mcp/
 
 # dependencies
 /node_modules

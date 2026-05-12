@@ -29,6 +29,8 @@ export type Init = {
 	refuaVeTevaProducts: Array<WooProduct>;
 	salesAgents: Array<SalesAgent>;
 	couponSalesAgents: Array<CouponSalesAgent>;
+	leadSources: Array<LeadSource>;
+	phoneLeadSources: Array<PhoneLeadSource>;
 };
 
 export type GeneralInfoValue = Array<GeneralInfoItem> | RotatingTextItem | GeneralInfoItem;
@@ -111,4 +113,16 @@ export type CouponSalesAgent = {
 	_id: string;
 	couponCode: string;
 	salesAgentId: string;
+};
+
+export type LeadSource = {
+	_id: string;
+	title: string;
+	value: string;
+};
+
+export type PhoneLeadSource = {
+	_id: string;
+	phone: string;
+	leadSourceValue: string;
 };
