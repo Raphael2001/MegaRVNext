@@ -25,6 +25,7 @@ const initialState: Init = {
 	couponSalesAgents: [],
 	leadSources: [],
 	phoneLeadSources: [],
+	leadAgents: [],
 };
 
 export const initSlice = createSlice({

@@ -12,6 +12,5 @@ const CMS_MODULES = {
 	PRODUCT: "Product",
 	COUPON_SALES_AGENT: "CouponSalesAgent",
 	LEAD_SOURCE: "LeadSource",
-	PHONE_LEAD_SOURCE: "PhoneLeadSource",
 };
 export default CMS_MODULES;

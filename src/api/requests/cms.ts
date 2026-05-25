@@ -157,6 +157,11 @@ const cms = {
 		[{ method: API_METHODS.POST }, { method: API_METHODS.PUT }, { method: API_METHODS.DELETE }],
 		"phoneLeadSources",
 	),
+	leadAgents: createCMSApiMethods(
+		"leadAgentMapping",
+		[{ method: API_METHODS.POST }, { method: API_METHODS.PUT }, { method: API_METHODS.DELETE }],
+		"leadAgents",
+	),
 	salesAgents: createCMSApiMethods("salesAgents", [
 		{
 			method: API_METHODS.PUT,

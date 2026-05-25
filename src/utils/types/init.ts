@@ -31,6 +31,7 @@ export type Init = {
 	couponSalesAgents: Array<CouponSalesAgent>;
 	leadSources: Array<LeadSource>;
 	phoneLeadSources: Array<PhoneLeadSource>;
+	leadAgents: Array<LeadAgent>;
 };
 
 export type GeneralInfoValue = Array<GeneralInfoItem> | RotatingTextItem | GeneralInfoItem;
@@ -105,7 +106,7 @@ export type MeetingType = {
 };
 
 export type SalesAgent = {
-	ownerid: string;
+	_id: string;
 	name: string;
 };
 
@@ -125,4 +126,10 @@ export type PhoneLeadSource = {
 	_id: string;
 	phone: string;
 	leadSourceValue: string;
+};
+
+export type LeadAgent = {
+	_id: string;
+	leadSourceValue: string;
+	agentId: string;
 };

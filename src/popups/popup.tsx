@@ -30,6 +30,7 @@ import RefuaVeTevaProductPopup from "./components/RefuaVeTevaProductPopup/RefuaV
 import CouponSalesAgentPopup from "./components/CouponSalesAgentPopup/CouponSalesAgentPopup";
 import LeadSourcePopup from "./components/LeadSourcePopup/LeadSourcePopup";
 import PhoneLeadSourcePopup from "./components/PhoneLeadSourcePopup/PhoneLeadSourcePopup";
+import LeadAgentPopup from "./components/LeadAgentPopup/LeadAgentPopup";
 
 const popupComponentsMap = {
 	[POPUP_TYPES.API_ERROR]: ApiErrorPopup,
@@ -53,6 +54,7 @@ const popupComponentsMap = {
 	[POPUP_TYPES.COUPON_SALES_AGENT]: CouponSalesAgentPopup,
 	[POPUP_TYPES.LEAD_SOURCE]: LeadSourcePopup,
 	[POPUP_TYPES.PHONE_LEAD_SOURCE]: PhoneLeadSourcePopup,
+	[POPUP_TYPES.LEAD_AGENT]: LeadAgentPopup,
 };
 
 export default function Popups({ className = "" }) {
