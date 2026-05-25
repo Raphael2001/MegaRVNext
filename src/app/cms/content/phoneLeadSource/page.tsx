@@ -40,7 +40,7 @@ export default function PhoneLeadSourcePage() {
 			header={header}
 			module={CMS_MODULES.LEAD_SOURCE}
 			popup={POPUP_TYPES.PHONE_LEAD_SOURCE}
-			searchFields={["phone"]}
+			searchFields={["phone", "leadSourceValue"]}
 		/>
 	);
 }

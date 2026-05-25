@@ -165,15 +165,21 @@ function PageGenerator(props: Props) {
 
 	function filterData(text: string) {
 		if (!text) {
-			setFilteredData(dataArray); // Reset to full array if search text is empty
+			setFilteredData(dataArray);
 			return;
 		}
 
-		const lowerCaseText = text.toLowerCase(); // Avoid calling toLowerCase repeatedly
+		const lowerCaseText = text.toLowerCase();
 
 		const filtered = dataArray.filter((item) =>
 			searchFields.some((field) => {
-				const value = item[field]; // Extract field value
+				const headerField = header[field];
+				if (headerField?.type === TABLE_CELL_TYPES.TEXT_FROM_DATASET) {
+					const { dataset, displayField, searchField } = headerField as any;
+					const match = dataset?.find((d: any) => d[searchField] === item[field]);
+					return (match?.[displayField] ?? "").toString().toLowerCase().includes(lowerCaseText);
+				}
+				const value = item[field];
 				return field in item && value?.toString().toLowerCase().includes(lowerCaseText);
 			}),
 		);

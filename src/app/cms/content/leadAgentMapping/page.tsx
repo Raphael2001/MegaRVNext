@@ -36,13 +36,20 @@ export default function LeadAgentPage() {
 		},
 	};
 
+	const sortedLeadAgents = [...(leadAgents ?? [])].sort((a, b) => {
+		const nameA = salesAgents?.find((s) => s._id === a.agentId)?.name ?? "";
+		const nameB = salesAgents?.find((s) => s._id === b.agentId)?.name ?? "";
+		return nameA.localeCompare(nameB);
+	});
+
 	return (
 		<PageGenerator
-			data={leadAgents}
+			data={sortedLeadAgents}
 			deleteApi={Api.cms.leadAgents.DELETE}
 			deleteTitle={translate("delete_lead_agent")}
 			header={header}
 			module={CMS_MODULES.LEAD_SOURCE}
+			pagination={false}
 			popup={POPUP_TYPES.LEAD_AGENT}
 			searchFields={["leadSourceValue", "agentId"]}
 		/>
