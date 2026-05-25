@@ -38,7 +38,7 @@ export default function PhoneLeadSourcePage() {
 			deleteApi={Api.cms.phoneLeadSources.DELETE}
 			deleteTitle={translate("delete_phone_lead_source")}
 			header={header}
-			module={CMS_MODULES.PHONE_LEAD_SOURCE}
+			module={CMS_MODULES.LEAD_SOURCE}
 			popup={POPUP_TYPES.PHONE_LEAD_SOURCE}
 			searchFields={["phone"]}
 		/>

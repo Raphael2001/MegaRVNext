@@ -13,7 +13,11 @@ import useCMSTranslate from "utils/hooks/useCMSTranslate";
 import { TableHeader } from "utils/types/table";
 
 export default function LeadSourcePage() {
-	const leadSources = useAppSelector((store) => store.init.leadSources);
+	const leadSources = useAppSelector((store) =>
+		[...(store.init.leadSources ?? [])].sort((a, b) =>
+			(a.title ?? "").localeCompare(b.title ?? ""),
+		),
+	);
 
 	const translate = useCMSTranslate();
 
@@ -37,6 +41,7 @@ export default function LeadSourcePage() {
 			module={CMS_MODULES.LEAD_SOURCE}
 			popup={POPUP_TYPES.LEAD_SOURCE}
 			searchFields={["title", "value"]}
+			pagination={false}
 		/>
 	);
 }
