@@ -32,6 +32,7 @@ export type Init = {
 	leadSources: Array<LeadSource>;
 	phoneLeadSources: Array<PhoneLeadSource>;
 	leadAgents: Array<LeadAgent>;
+	powerLinkUsers: Array<PowerLinkUser>;
 };
 
 export type GeneralInfoValue = Array<GeneralInfoItem> | RotatingTextItem | GeneralInfoItem;
@@ -132,4 +133,10 @@ export type LeadAgent = {
 	_id: string;
 	leadSourceValue: string;
 	agentId: string;
+};
+
+export type PowerLinkUser = {
+	_id: string;
+	name: string;
+	userId: string;
 };

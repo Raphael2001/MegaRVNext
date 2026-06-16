@@ -91,6 +91,16 @@ export default function GeneralPage() {
 						})
 					}
 				/>
+				<CmsButton
+					text={translate("fetch_pl_users")}
+					className="create"
+					color="blue"
+					onClick={() =>
+						Api.cms.powerLinkUsers.PUT({
+							config: { onSuccess: onSuccessNotification },
+						})
+					}
+				/>
 			</div>
 		</div>
 	);

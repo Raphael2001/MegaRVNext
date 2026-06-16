@@ -26,6 +26,7 @@ const initialState: Init = {
 	leadSources: [],
 	phoneLeadSources: [],
 	leadAgents: [],
+	powerLinkUsers: [],
 };
 
 export const initSlice = createSlice({
