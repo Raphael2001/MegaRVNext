@@ -27,6 +27,7 @@ const initialState: Init = {
 	phoneLeadSources: [],
 	leadAgents: [],
 	powerLinkUsers: [],
+	taskOwnerOverrides: [],
 };
 
 export const initSlice = createSlice({
