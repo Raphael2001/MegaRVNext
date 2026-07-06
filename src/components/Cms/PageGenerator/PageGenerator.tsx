@@ -65,11 +65,12 @@ function PageGenerator(props: Props) {
 
 	const translate = useCMSTranslate();
 
+	const dataArray: any[] = Array.isArray(data) ? data : [];
+
 	const [filterText, setFilterText] = useState("");
-	const [filteredData, setFilteredData] = useState(data);
+	const [filteredData, setFilteredData] = useState<any[]>(dataArray);
 	const [page, setPage] = useState(1);
 	const openPopup = usePopup();
-	const dataArray: any[] = Array.isArray(data) ? data : [];
 
 	const numberOfPages = numberOfResults ? Math.ceil(filteredData.length / numberOfResults) : 1;
 

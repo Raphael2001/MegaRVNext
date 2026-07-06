@@ -33,6 +33,7 @@ export type Init = {
 	phoneLeadSources: Array<PhoneLeadSource>;
 	leadAgents: Array<LeadAgent>;
 	powerLinkUsers: Array<PowerLinkUser>;
+	taskOwnerOverrides: Array<TaskOwnerOverride>;
 };
 
 export type GeneralInfoValue = Array<GeneralInfoItem> | RotatingTextItem | GeneralInfoItem;
@@ -139,4 +140,10 @@ export type PowerLinkUser = {
 	_id: string;
 	name: string;
 	userId: string;
+};
+
+export type TaskOwnerOverride = {
+	_id: string;
+	userId: string;
+	overrideUserId: string;
 };

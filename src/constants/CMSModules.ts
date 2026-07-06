@@ -12,5 +12,6 @@ const CMS_MODULES = {
 	PRODUCT: "Product",
 	COUPON_SALES_AGENT: "CouponSalesAgent",
 	LEAD_SOURCE: "LeadSource",
+	TASK_OWNER_OVERRIDE: "TaskOwnerOverride",
 };
 export default CMS_MODULES;

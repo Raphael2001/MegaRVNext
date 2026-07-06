@@ -162,6 +162,11 @@ const cms = {
 		[{ method: API_METHODS.POST }, { method: API_METHODS.PUT }, { method: API_METHODS.DELETE }],
 		"leadAgents",
 	),
+	taskOwnerOverrides: createCMSApiMethods(
+		"taskOwnerOverride",
+		[{ method: API_METHODS.POST }, { method: API_METHODS.PUT }, { method: API_METHODS.DELETE }],
+		"taskOwnerOverrides",
+	),
 	powerLinkUsers: createCMSApiMethods("powerLinkUsers", [
 		{
 			method: API_METHODS.PUT,

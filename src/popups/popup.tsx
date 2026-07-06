@@ -31,6 +31,7 @@ import CouponSalesAgentPopup from "./components/CouponSalesAgentPopup/CouponSale
 import LeadSourcePopup from "./components/LeadSourcePopup/LeadSourcePopup";
 import PhoneLeadSourcePopup from "./components/PhoneLeadSourcePopup/PhoneLeadSourcePopup";
 import LeadAgentPopup from "./components/LeadAgentPopup/LeadAgentPopup";
+import TaskOwnerOverridePopup from "./components/TaskOwnerOverridePopup/TaskOwnerOverridePopup";
 
 const popupComponentsMap = {
 	[POPUP_TYPES.API_ERROR]: ApiErrorPopup,
@@ -55,6 +56,7 @@ const popupComponentsMap = {
 	[POPUP_TYPES.LEAD_SOURCE]: LeadSourcePopup,
 	[POPUP_TYPES.PHONE_LEAD_SOURCE]: PhoneLeadSourcePopup,
 	[POPUP_TYPES.LEAD_AGENT]: LeadAgentPopup,
+	[POPUP_TYPES.TASK_OWNER_OVERRIDE]: TaskOwnerOverridePopup,
 };
 
 export default function Popups({ className = "" }) {

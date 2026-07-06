@@ -131,5 +131,8 @@
 	"delete_phone_lead_source": "למחוק את שיוך הטלפון הזה?",
 	"agent": "סוכן",
 	"delete_lead_agent": "למחוק את שיוך הסוכן הזה?",
-	"fetch_pl_users": "משיכת משתמשי PowerLink"
+	"fetch_pl_users": "משיכת משתמשי PowerLink",
+	"user": "משתמש",
+	"override_user": "משתמש חלופי",
+	"delete_task_owner_override": "למחוק את שיוך המשתמש הזה?"
 }
